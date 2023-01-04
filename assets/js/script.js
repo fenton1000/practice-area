@@ -139,8 +139,29 @@ let teams = createNextTeams();
 
     console.log(pointsAwarded);
 
+    if (teamAScore > teamBScore) {
+        for (player of teamA) {
+            for (let i = 0; i < players.length; i++) {
+                if (player === players[i].playerName) {
+                    players[i].points = players[i].points + pointsAwarded
+                }
+            } 
+        }
+    } else {
+        for (player of teamB) {
+            for (let i = 0; i < players.length; i++) {
+                if (player === players[i].playerName) {
+                    players[i].points = players[i].points + pointsAwarded
+                }
+            } 
+        }
+    }
 
+    console.log(players);
 
+    // Re-orders the player array based on latest points from highest to lowest
+
+    
 }
 
 
