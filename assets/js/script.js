@@ -37,7 +37,7 @@ function addPlayer() {
 
 /**
  * function createNextTeams creates two team selections from the players array
- * based on array index
+ * based on array index. Returns TeamA, TeamB array.
  */
 function createNextTeams() {
 
@@ -102,6 +102,8 @@ function createNextTeams() {
     console.log(teamA);
     console.log(teamB);
 
+    return [teamA, teamB]
+
 }
 
 /**
@@ -109,6 +111,35 @@ function createNextTeams() {
  * and updates player points in the player array accordingly.
  */
 function updatePlayerPoints() {
+
+/* NB NB NB temporary solution to bring in teams. This might not work depending on if and how we add a feature to prevent repeat teams.
+The teams will be sent to the screen via html elements in the real version and the current team can be recovered from there. NB NB NB */
+    
+let teams = createNextTeams();
+
+    let teamA = teams[0];
+    let teamB = teams[1];
+
+    console.log(teamA);
+    console.log(teamB);
+
+    let teamAScore = document.getElementById('team-a-score').value;
+    let teamBScore = document.getElementById('team-b-score').value;
+
+    console.log(teamAScore);
+    console.log(teamBScore);
+
+    let pointsAwarded; 
+
+    if (teamBScore > teamAScore) {
+        pointsAwarded = teamBScore - teamAScore;
+    } else {
+        pointsAwarded = teamAScore - teamBScore;
+    }
+
+    console.log(pointsAwarded);
+
+
 
 }
 
