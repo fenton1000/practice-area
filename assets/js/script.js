@@ -31,8 +31,6 @@ function addPlayer() {
     };
 
     players.push(playerObject);
-
-    console.log(players);
 }
 
 /**
@@ -102,7 +100,9 @@ function createNextTeams() {
     console.log(teamA);
     console.log(teamB);
 
-    return [teamA, teamB]
+    return [teamA, teamB];
+
+    
 
 }
 
@@ -119,9 +119,6 @@ let teams = createNextTeams();
 
     let teamA = teams[0];
     let teamB = teams[1];
-
-    console.log(teamA);
-    console.log(teamB);
 
     let teamAScore = document.getElementById('team-a-score').value;
     let teamBScore = document.getElementById('team-b-score').value;
@@ -157,11 +154,10 @@ let teams = createNextTeams();
         }
     }
 
-    console.log(players);
-
     // Re-orders the player array based on latest points from highest to lowest
+    players.sort( function(a,b) {return b.points - a.points});
 
-    
+    console.log(players);
 }
 
 
