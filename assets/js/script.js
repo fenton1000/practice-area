@@ -31,6 +31,7 @@ function addPlayer() {
     };
 
     players.push(playerObject);
+    console.log(players);
 }
 
 /**
